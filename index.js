@@ -15,33 +15,63 @@ var numbers = document.getElementsByClassName("number")
 for (i=0; i < numbers.length; i++) {
   numbers[i].addEventListener("click", function() {
     if (leftValue == undefined && operator == undefined)
+    {if (this.innerText != ".")
       {leftValue = Number(this.innerText)
         leftValueDigits.push(leftValue)
         finalLeftValue = leftValue
       document.getElementById("left_value").innerHTML = leftValue}
+    else if (this.innerText == ".")
+  {leftValue = this.innerText
+    leftValueDigits.push(leftValue)
+    finalLeftValue = leftValue
+  document.getElementById("left_value").innerHTML = leftValue}}
     
       else if  (leftValue !=undefined && operator ==undefined)
-    if this.innnerTest {leftValue = Number(this.innerText)
+      {if (this.innerText != ".")
+        {leftValue = Number(this.innerText)
       leftValueDigits.push(leftValue);
       leftValueString = leftValueDigits.join('')
       finalLeftValue = Number(leftValueString)
       document.getElementById("left_value").innerHTML = finalLeftValue
     }
+  else if (this.innerText == ".")
+  {leftValue = this.innerText
+    leftValueDigits.push(leftValue);
+    leftValueString = leftValueDigits.join('')
+    finalLeftValue = Number(leftValueString)
+    document.getElementById("left_value").innerHTML = finalLeftValue
+  }
+}
 
 
     else if (leftValue != undefined && operator != undefined && rightValue == undefined)
-      {rightValue = Number(this.innerText)
+      {if (this.innerText != ".")
+        {rightValue = Number(this.innerText)
         rightValueDigits.push(rightValue)
         finalRightValue = rightValue
         document.getElementById("right_value").innerHTML = rightValue}
+      else if (this.innerText == ".")
+      {rightValue = this.innerText
+        rightValueDigits.push(rightValue)
+        finalRightValue = rightValue
+        document.getElementById("right_value").innerHTML = rightValue}
+      }
     
 
       else if (rightValue != undefined)
-      {rightValue = Number(this.innerText)
+      {if (this.innerText != ".")
+        {rightValue = Number(this.innerText)
         rightValueDigits.push(rightValue);
         rightValueString = rightValueDigits.join('')
         finalRightValue = Number(rightValueString)
         document.getElementById("right_value").innerHTML = finalRightValue}
+        else if (this.innerText == ".")
+        {rightValue = this.innerText
+          rightValueDigits.push(rightValue);
+          rightValueString = rightValueDigits.join('')
+          finalRightValue = Number(rightValueString)
+          document.getElementById("right_value").innerHTML = finalRightValue}
+      }
   })
 }
 
