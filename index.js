@@ -86,7 +86,7 @@ operators[i].addEventListener("click", function() {
 var equals = document.getElementById("equals")
 equals.addEventListener("click", function() {
 if (operator == "/")
-{output = FinalLeftValue / finalRightValue
+{output = finalLeftValue / finalRightValue
   document.getElementById("output").innerHTML = "= " + output}
   else if (operator == "*")
   {output = finalLeftValue * finalRightValue
@@ -115,4 +115,12 @@ clear.addEventListener("click", function() {
   document.getElementById("output").innerHTML =" "
   document.getElementById("left_value").innerHTML =" "
   document.getElementById("operator").innerHTML =" " 
+});
+
+var negative = document.getElementById("negative")
+negative.addEventListener("click", function() {
+  if (operator == undefined)
+  { leftValueDigits.unshift("-")}
+  if (operator != undefined)
+  {rightValueDigits.unshift("-")}
 });
